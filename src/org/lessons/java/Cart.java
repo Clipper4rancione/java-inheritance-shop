@@ -33,6 +33,26 @@ public class Cart {
                     int storage = Integer.parseInt(scan.nextLine());
                     Smartphones phone = new Smartphones(productName, productDescription, price, iva, storage);
 
+                    cart[i] = phone;
+
+                }
+                case 2 -> {
+                    System.out.println("Hai scelto cuffie");
+                    System.out.println("Inserisci il nome delle cuffie");
+                    String productName = scan.nextLine();
+                    System.out.println("Inserisci la descrizione");
+                    String productDescription = scan.nextLine();
+                    System.out.println("Inserisci il prezzo");
+                    double price = Double.parseDouble(scan.nextLine());
+                    System.out.println("inserisci l'iva");
+                    double iva = Double.parseDouble(scan.nextLine());
+                    System.out.println("Di che colore sono?");
+                    String color = scan.nextLine();
+                    System.out.println("Sono Wireless: 1 = Si, 2 = No");
+                    Boolean type = Boolean.valueOf(scan.nextLine());
+                    Headphones headphones = new Headphones(productName, productDescription, price, iva, color, type);
+
+                    cart[i] = headphones;
                 }
             }
         }
