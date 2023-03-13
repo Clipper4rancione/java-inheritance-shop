@@ -7,7 +7,7 @@ public class Smartphones extends Product{
     private int storage;
 
     // CONSTRUCTOR
-    public Smartphones(String productName, String productDescription, double price, double iva, int imei, int storage) {
+    public Smartphones(String productName, String productDescription, double price, double iva, int imei) {
         super(productName, productDescription, price, iva);
         Random r = new Random();
         imei = r.nextInt(1000, 999999);

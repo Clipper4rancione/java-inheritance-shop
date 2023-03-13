@@ -5,10 +5,10 @@ import java.util.Random;
 public class Headphones extends Product{
 
     private String color;
-    private String type;
+    private Boolean type;
 
     // CONSTRUCTOR
-    public Headphones(String productName, String productDescription, double price, double iva) {
+    public Headphones(String productName, String productDescription, double price, double iva, String color, Boolean type) {
         super(productName, productDescription, price, iva);
         this.color = color;
         this.type = type;
@@ -25,11 +25,11 @@ public class Headphones extends Product{
         this.color = color;
     }
 
-    public String getType() {
+    public Boolean getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Boolean type) {
         this.type = type;
     }
 
