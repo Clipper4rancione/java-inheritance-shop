@@ -1,5 +1,6 @@
 package org.lessons.java;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Cart {
@@ -54,6 +55,28 @@ public class Cart {
 
                     cart[i] = headphones;
                 }
+                case 3 -> {
+                    System.out.println("Hai scelto Televisore");
+                    System.out.println("Inserisci il nome della televisione");
+                    String productName = scan.nextLine();
+                    System.out.println("Inserisci la descrizione");
+                    String productDescription = scan.nextLine();
+                    System.out.println("Inserisci il prezzo");
+                    double price = Double.parseDouble(scan.nextLine());
+                    System.out.println("inserisci l'iva");
+                    double iva = Double.parseDouble(scan.nextLine());
+                    System.out.println("Quanti pollici è?");
+                    int inches = Integer.parseInt(scan.nextLine());
+                    System.out.println("È Smart? 1 = Si, 2 = No");
+                    boolean isSmart = Boolean.parseBoolean(scan.nextLine());
+                    Televisions tv = new Televisions(productName, productDescription, price, iva, inches, isSmart);
+
+                    cart[i] = tv;
+                }
+            }
+            for ( Product product : cart){
+                System.out.println("ecco il tuo carrello: ");
+
             }
         }
     }

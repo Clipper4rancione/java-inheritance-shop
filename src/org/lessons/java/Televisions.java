@@ -2,11 +2,11 @@ package org.lessons.java;
 
 public class Televisions extends Product{
 
-    private double inches;
+    private int inches;
     private boolean isSmart;
 
     // CONSTRUCTOR
-    public Televisions(String productName, String productDescription, double price, double iva) {
+    public Televisions(String productName, String productDescription, double price, double iva, int inches, boolean isSmart) {
         super(productName, productDescription, price, iva);
         this.inches = inches;
         this.isSmart = isSmart;
@@ -15,11 +15,11 @@ public class Televisions extends Product{
     // GETTER AND SETTERS
 
 
-    public double getInches() {
+    public int getInches() {
         return inches;
     }
 
-    public void setInches(double inches) {
+    public void setInches(int inches) {
         this.inches = inches;
     }
 
