@@ -13,71 +13,58 @@ public class Cart {
 
 
 
-        for (int i = 0; i < cart.length; i++) {
+        for (int i = 0; i < cartLength; i++) {
             System.out.println("Che tipo di prodotto vorresti aggiungere al carrello?");
             System.out.println("1 - Smartphone 2 - Cuffie 3 - Televisori");
             int userChoice = Integer.parseInt(scan.nextLine());
+            System.out.println("Hai scelto smartphone");
+            System.out.println("Inserisci il nome dello smartphone");
+            String productName = scan.nextLine();
+            System.out.println("Inserisci la descrizione");
+            String productDescription = scan.nextLine();
+            System.out.println("Inserisci il prezzo");
+            double price = Double.parseDouble(scan.nextLine());
+            System.out.println("inserisci l'iva");
+            double iva = Double.parseDouble(scan.nextLine());
 
             switch (userChoice){
                 case 1 -> {
-
-                    System.out.println("Hai scelto smartphone");
-                    System.out.println("Inserisci il nome dello smartphone");
-                    String productName = scan.nextLine();
-                    System.out.println("Inserisci la descrizione");
-                    String productDescription = scan.nextLine();
-                    System.out.println("Inserisci il prezzo");
-                    double price = Double.parseDouble(scan.nextLine());
-                    System.out.println("inserisci l'iva");
-                    double iva = Double.parseDouble(scan.nextLine());
+                    System.out.println("IMEI: ");
+                    String imei = scan.nextLine();
                     System.out.println("Quanto deve essere grande la memoria?");
                     int storage = Integer.parseInt(scan.nextLine());
-                    Smartphones phone = new Smartphones(productName, productDescription, price, iva, storage);
 
-                    cart[i] = phone;
+
+                    cart[i] = new Smartphones(productName,productDescription, price, iva, storage);
+                    break;
 
                 }
                 case 2 -> {
-                    System.out.println("Hai scelto cuffie");
-                    System.out.println("Inserisci il nome delle cuffie");
-                    String productName = scan.nextLine();
-                    System.out.println("Inserisci la descrizione");
-                    String productDescription = scan.nextLine();
-                    System.out.println("Inserisci il prezzo");
-                    double price = Double.parseDouble(scan.nextLine());
-                    System.out.println("inserisci l'iva");
-                    double iva = Double.parseDouble(scan.nextLine());
                     System.out.println("Di che colore sono?");
                     String color = scan.nextLine();
                     System.out.println("Sono Wireless: 1 = Si, 2 = No");
                     Boolean type = Boolean.valueOf(scan.nextLine());
-                    Headphones headphones = new Headphones(productName, productDescription, price, iva, color, type);
+                    cart[i] = new Headphones(productName, productDescription, price, iva, color, type);
 
-                    cart[i] = headphones;
                 }
                 case 3 -> {
-                    System.out.println("Hai scelto Televisore");
-                    System.out.println("Inserisci il nome della televisione");
-                    String productName = scan.nextLine();
-                    System.out.println("Inserisci la descrizione");
-                    String productDescription = scan.nextLine();
-                    System.out.println("Inserisci il prezzo");
-                    double price = Double.parseDouble(scan.nextLine());
-                    System.out.println("inserisci l'iva");
-                    double iva = Double.parseDouble(scan.nextLine());
                     System.out.println("Quanti pollici è?");
                     int inches = Integer.parseInt(scan.nextLine());
                     System.out.println("È Smart? 1 = Si, 2 = No");
                     boolean isSmart = Boolean.parseBoolean(scan.nextLine());
-                    Televisions tv = new Televisions(productName, productDescription, price, iva, inches, isSmart);
 
-                    cart[i] = tv;
+                    cart[i] = new Televisions(productName, productDescription, price, iva, inches, isSmart);
+                }
+                default -> {
+                    System.out.println("input non valido");
+                    break;
                 }
             }
-            for ( Product product : cart){
-                System.out.println("ecco il tuo carrello: ");
 
-            }
+        }
+        for (int i = 0; i < cart.length; i++) {
+            System.out.println("prodotto " + (i + 1));
+            System.out.println(cart[i]);
         }
     }
 }

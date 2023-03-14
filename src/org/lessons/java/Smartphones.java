@@ -3,24 +3,24 @@ package org.lessons.java;
 import java.util.Random;
 
 public class Smartphones extends Product{
-    private int imei;
+    private String imei;
     private int storage;
 
     // CONSTRUCTOR
-    public Smartphones(String productName, String productDescription, double price, double iva, int imei) {
+    public Smartphones(String productName, String productDescription, double price, double iva, int storage) {
         super(productName, productDescription, price, iva);
         Random r = new Random();
-        imei = r.nextInt(1000, 999999);
+        this.imei = imei;
         this.storage = storage;
     }
     //GETTERS AND SETTERS
 
 
-    public int getImei() {
+    public String getImei() {
         return imei;
     }
 
-    public void setImei(int imei) {
+    public void setImei(String imei) {
         this.imei = imei;
     }
 
@@ -36,7 +36,8 @@ public class Smartphones extends Product{
 
     @Override
     public String toString() {
-        return "Smartphones{" +
+        return "Smartphones{" + "/" +
+                super.toString() +
                 "imei=" + imei +
                 ", storage=" + storage +
                 '}';

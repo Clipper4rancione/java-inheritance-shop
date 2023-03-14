@@ -36,7 +36,8 @@ public class Televisions extends Product{
 
     @Override
     public String toString() {
-        return "Televisions{" +
+        return "Televisions{" + "/" +
+                super.toString() +
                 "inches=" + inches +
                 ", isSmart=" + isSmart +
                 '}';

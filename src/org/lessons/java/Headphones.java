@@ -38,7 +38,8 @@ public class Headphones extends Product{
 
     @Override
     public String toString() {
-        return "Headphones{" +
+        return "Headphones{" +  "/" +
+                super.toString() +
                 "color='" + color + '\'' +
                 ", type='" + type + '\'' +
                 '}';
